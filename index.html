@@ -3,168 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MYRONIX INDUSTRIES — Build What’s Next</title>
-<meta name="description" content="MYRONIX INDUSTRIES — programming, digital media, creation, editing, learning, collaboration and business.">
+<title>MYRONIX INDUSTRIES — Explore. Create. Build.</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-:root{--bg:#050505;--fg:#f4f4f1;--muted:#8c8c88;--line:#242424;--soft:#101010}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.cursor{position:fixed;width:12px;height:12px;border:1px solid #fff;border-radius:50%;pointer-events:none;z-index:100;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .2s,height .2s}
-.nav{position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,92%);height:58px;padding:0 18px;border:1px solid #ffffff1c;border-radius:999px;background:#090909c9;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:900;letter-spacing:.13em}
-.mini-mark{width:25px;height:25px}
-.navlinks{display:flex;gap:25px;font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:#aaa}
-.navlinks a:hover{color:#fff}
-.navbtn{border:1px solid #ffffff36;border-radius:999px;padding:9px 13px;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:140px 6vw 80px;overflow:hidden}
-.noise{position:absolute;inset:0;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero:after{content:"";position:absolute;width:65vw;height:65vw;right:-20vw;top:-8vw;border-radius:50%;background:radial-gradient(circle,#ffffff13,transparent 64%);filter:blur(8px)}
-.hero-inner{position:relative;z-index:2;width:min(1200px,100%);margin:auto}
-.eyebrow{font-size:9px;color:#777;letter-spacing:.26em;text-transform:uppercase;margin-bottom:28px}
-.hero h1{font-size:clamp(58px,10.5vw,145px);line-height:.8;letter-spacing:-.085em;font-weight:800;max-width:1100px}
-.hero h1 .thin{font-weight:400;color:#777}
-.hero-sub{margin-top:35px;color:#999;max-width:500px;font-size:14px;line-height:1.75}
-.actions{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
-.btn{border:1px solid #eee;background:#eee;color:#050505;border-radius:999px;padding:13px 18px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;transition:.25s}
-.btn:hover{transform:translateY(-3px)}
-.btn.dark{background:transparent;color:#fff;border-color:#333}
-.hero-mark{position:absolute;right:8vw;bottom:12vh;width:230px;opacity:.18;animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(4deg)}}
-.scroll{position:absolute;bottom:27px;left:6vw;color:#555;font-size:9px;letter-spacing:.2em;text-transform:uppercase;z-index:2}
-section{padding:120px 6vw}
-.wrap{width:min(1180px,100%);margin:auto}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s ease,transform .9s ease}
-.reveal.show{opacity:1;transform:none}
-.head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:55px}
-h2{font-size:clamp(45px,7vw,94px);line-height:.85;letter-spacing:-.075em}
-.copy{max-width:390px;color:#8b8b87;font-size:13px;line-height:1.75}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.card{min-height:360px;border:1px solid var(--line);background:linear-gradient(145deg,#101010,#070707);padding:24px;position:relative;overflow:hidden;transition:.45s}
-.card:hover{transform:translateY(-8px);border-color:#555}
-.card:before{content:"";position:absolute;width:230px;height:230px;right:-100px;top:-100px;border-radius:50%;background:radial-gradient(circle,#fff1,transparent 67%);transition:.5s}
-.card:hover:before{transform:scale(1.35)}
-.num{font-size:9px;color:#666;letter-spacing:.18em}
-.card h3{position:absolute;left:24px;bottom:58px;font-size:28px;letter-spacing:-.05em}
-.card p{position:absolute;left:24px;right:24px;bottom:24px;color:#777;font-size:11px;line-height:1.55}
-.feature{min-height:82vh;background:#ededeb;color:#090909;display:flex;align-items:center;overflow:hidden;position:relative}
-.feature:before{content:"";position:absolute;width:55vw;height:55vw;border-radius:50%;right:-10vw;top:-20vw;background:radial-gradient(circle,#fff,transparent 68%)}
-.feature h2{position:relative;z-index:2;font-size:clamp(65px,12vw,170px)}
-.feature h2 span{font-weight:400;color:#777}
-.marquee{border-top:1px solid #222;border-bottom:1px solid #222;overflow:hidden;white-space:nowrap;padding:18px 0;color:#666;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
-.track{display:inline-block;animation:move 22s linear infinite}
-@keyframes move{to{transform:translateX(-50%)}}
-.platform{background:#0b0b0b}
-.modules{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#222}
-.module{background:#0b0b0b;padding:38px;min-height:230px}
-.module h3{font-size:24px;letter-spacing:-.04em;margin:35px 0 12px}
-.module p{color:#777;font-size:12px;line-height:1.65;max-width:370px}
-.social{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.socialbox{border:1px solid #252525;padding:35px;min-height:240px;transition:.3s}
-.socialbox:hover{border-color:#777;transform:translateY(-5px)}
-.socialbox strong{font-size:25px}
-.socialbox p{color:#777;font-size:12px;line-height:1.6;margin:16px 0 25px}
-.socialbox a{font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-.contact{min-height:75vh;display:flex;align-items:center}
-.contact h2{max-width:850px}
-.contact-email{display:inline-block;margin-top:35px;color:#aaa;border-bottom:1px solid #555;padding-bottom:8px;font-size:13px}
-footer{border-top:1px solid #202020;padding:30px 6vw;color:#666;font-size:9px;letter-spacing:.13em;text-transform:uppercase;display:flex;justify-content:space-between}
-@media(max-width:800px){
-.navlinks{display:none}.nav{height:54px}.hero{padding:125px 6vw 80px}.hero-mark{width:150px;right:4vw;bottom:17vh}
-.head{display:block}.copy{margin-top:25px}.cards,.social,.modules{grid-template-columns:1fr}
-.card{min-height:300px}.module{min-height:200px}
-section{padding:90px 6vw}footer{flex-direction:column;gap:12px}
-.cursor{display:none}
-}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:#050505;color:#f5f5f2;font-family:Inter,Arial,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.nav{position:fixed;z-index:50;top:16px;left:50%;transform:translateX(-50%);width:min(1200px,92%);height:58px;border:1px solid #fff2;border-radius:999px;background:#080808cc;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;padding:0 17px}.brand{font-size:12px;font-weight:900;letter-spacing:.15em;display:flex;align-items:center;gap:9px}.mark{width:25px;height:25px}.links{display:flex;gap:24px;color:#aaa;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.links a:hover{color:#fff}.pill{font-size:9px;letter-spacing:.13em;text-transform:uppercase;border:1px solid #fff4;border-radius:999px;padding:9px 13px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:125px 6vw 75px}.hero:before{content:"";position:absolute;width:65vw;height:65vw;right:-20vw;top:-18vw;border-radius:50%;background:radial-gradient(circle,#fff15,transparent 65%);animation:pulse 6s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.08);opacity:.7}}.gridbg{position:absolute;inset:0;background-image:linear-gradient(#fff009 1px,transparent 1px),linear-gradient(90deg,#fff009 1px,transparent 1px);background-size:75px 75px;mask-image:linear-gradient(#000,transparent 80%)}.hero-inner{position:relative;z-index:2;width:min(1200px,100%);margin:auto}.eyebrow{font-size:9px;color:#70706c;letter-spacing:.27em;text-transform:uppercase;margin-bottom:27px}h1{font-size:clamp(58px,10.5vw,145px);line-height:.79;letter-spacing:-.09em}.thin{font-weight:400;color:#777}.sub{max-width:520px;color:#92928e;font-size:14px;line-height:1.75;margin-top:35px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;background:#eee;color:#050505;border:1px solid #eee;border-radius:999px;padding:13px 18px;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:.3s}.btn:hover{transform:translateY(-4px)}.btn.alt{background:transparent;color:#fff;border-color:#333}.hero-mark{position:absolute;right:8vw;bottom:13vh;width:220px;opacity:.13;animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-18px) rotate(5deg)}}.scroll{position:absolute;bottom:25px;left:6vw;color:#555;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+.marquee{border-top:1px solid #222;border-bottom:1px solid #222;overflow:hidden;white-space:nowrap;padding:18px 0;color:#666;font-size:9px;letter-spacing:.23em}.track{display:inline-block;animation:marquee 26s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:115px 6vw}.wrap{width:min(1200px,100%);margin:auto}.head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:50px}h2{font-size:clamp(44px,7vw,92px);line-height:.84;letter-spacing:-.075em}.copy{max-width:410px;color:#888;font-size:13px;line-height:1.75}.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+.explore{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.tile{height:390px;border:1px solid #242424;position:relative;overflow:hidden;padding:23px;background:#0b0b0b;transition:.4s;text-align:left;color:#f5f5f2;cursor:pointer}.tile .explore-tag{position:absolute;right:20px;top:22px;font-size:8px;letter-spacing:.12em;color:#aaa}.tile:focus{outline:1px solid #aaa}.tile:hover{transform:translateY(-8px);border-color:#666}.tile .num{font-size:9px;color:#666;letter-spacing:.16em}.tile h3{position:absolute;left:23px;bottom:72px;font-size:25px;letter-spacing:-.05em}.tile p{position:absolute;left:23px;right:20px;bottom:23px;color:#777;font-size:10px;line-height:1.55}.visual{position:absolute;inset:0;opacity:.45}.code{background:repeating-linear-gradient(0deg,transparent 0 22px,#fff009 23px 24px),repeating-linear-gradient(90deg,transparent 0 30px,#fff009 31px 32px);transform:skewY(-18deg) scale(1.5)}.game{background:radial-gradient(circle at 65% 35%,#fff3 0 3%,transparent 4%),linear-gradient(135deg,#fff0 35%,#fff1 36% 37%,transparent 38%);animation:game 4s linear infinite}@keyframes game{50%{transform:rotate(5deg) scale(1.1)}}.edit{background:linear-gradient(120deg,transparent 0 25%,#fff2 26% 28%,transparent 29% 50%,#fff1 51% 54%,transparent 55%);animation:edit 5s ease-in-out infinite}@keyframes edit{50%{transform:translateX(30px)}}.design{background:radial-gradient(circle,#fff2 0 2px,transparent 3px);background-size:28px 28px;transform:rotate(-7deg) scale(1.3)}
+.feature{min-height:88vh;background:#ededeb;color:#090909;display:flex;align-items:center;position:relative;overflow:hidden}.feature:before{content:"";position:absolute;width:60vw;height:60vw;right:-18vw;top:-22vw;border-radius:50%;background:radial-gradient(circle,#fff,transparent 68%)}.feature h2{position:relative;z-index:2;font-size:clamp(60px,11vw,165px)}.feature h2 span{font-weight:400;color:#777}
+.builder{background:#0a0a0a}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#262626}.step{background:#0a0a0a;min-height:250px;padding:25px}.step .n{font-size:10px;color:#666}.step h3{font-size:21px;margin:50px 0 12px;letter-spacing:-.04em}.step p{font-size:11px;color:#777;line-height:1.6}.demo{margin-top:12px;border:1px solid #252525;min-height:400px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}.demo-left{padding:35px;background:#ededeb;color:#080808}.demo-left h3{font-size:clamp(40px,6vw,75px);line-height:.86;letter-spacing:-.07em}.demo-left p{color:#666;font-size:12px;line-height:1.7;max-width:360px;margin-top:25px}.demo-right{padding:35px;background:linear-gradient(145deg,#101010,#070707);display:flex;align-items:center;justify-content:center;position:relative}.orb{width:230px;height:230px;border:1px solid #fff3;border-radius:50%;box-shadow:0 0 70px #fff08 inset;animation:spin 10s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.community{min-height:80vh;background:#ededeb;color:#090909;display:flex;align-items:center}.community h2{font-size:clamp(55px,9vw,125px)}.community p{max-width:520px;color:#666;font-size:13px;line-height:1.75;margin-top:25px}.social{display:grid;grid-template-columns:1fr 1fr;gap:10px}.socialbox{border:1px solid #252525;padding:34px;min-height:220px;transition:.35s}.socialbox:hover{transform:translateY(-7px);border-color:#666}.socialbox h3{font-size:25px;letter-spacing:-.05em}.socialbox p{color:#777;font-size:11px;margin:15px 0 25px}.socialbox a{font-size:9px;letter-spacing:.16em;text-transform:uppercase}.contact{min-height:75vh;display:flex;align-items:center}.contact h2{max-width:900px}.email{display:inline-block;margin-top:32px;color:#aaa;border-bottom:1px solid #555;padding-bottom:8px;font-size:13px}footer{border-top:1px solid #222;padding:30px 6vw;color:#666;font-size:9px;letter-spacing:.13em;text-transform:uppercase;display:flex;justify-content:space-between}
+@media(max-width:900px){.explore{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.demo{grid-template-columns:1fr}}@media(max-width:650px){.links{display:none}.hero{padding:120px 6vw 80px}.hero-mark{width:140px}.head{display:block}.copy{margin-top:23px}.explore,.steps,.social{grid-template-columns:1fr}section{padding:88px 6vw}footer{flex-direction:column;gap:12px}}
+
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;background:#000b;backdrop-filter:blur(14px)}
+.modal.open{display:flex}.modal-card{width:min(760px,94vw);max-height:88vh;overflow:auto;border:1px solid #444;background:linear-gradient(145deg,#151515,#080808);padding:34px;position:relative;box-shadow:0 25px 100px #000}
+.modal-close{position:absolute;right:18px;top:18px;background:transparent;border:1px solid #444;color:#fff;border-radius:50%;width:35px;height:35px;cursor:pointer}
+.modal-kicker{font-size:9px;color:#777;letter-spacing:.2em;text-transform:uppercase}.modal h3{font-size:clamp(38px,6vw,70px);letter-spacing:-.07em;line-height:.9;margin:18px 0}.modal p{color:#999;font-size:13px;line-height:1.75;max-width:620px}.modal-list{margin:24px 0;padding-left:18px;color:#aaa;font-size:12px;line-height:2}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-
 <header class="nav">
-  <a class="brand" href="#home">
-    <svg class="mini-mark" viewBox="0 0 100 100" aria-label="MYRONIX mark"><path d="M14 78V22h15l21 29 21-29h15v56H72V44L50 72 28 44v34Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/></svg>
-    MYRONIX
-  </a>
-  <nav class="navlinks"><a href="#about">About</a><a href="#platform">Platform</a><a href="#systems">Systems</a><a href="#contact">Contact</a></nav>
-  <a class="navbtn" href="https://www.instagram.com/myronix.industries/" target="_blank" rel="noopener">Instagram ↗</a>
+<a class="brand" href="#home"><svg class="mark" viewBox="0 0 100 100"><path d="M14 78V22h15l21 29 21-29h15v56H72V44L50 72 28 44v34Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/></svg>MYRONIX</a>
+<nav class="links"><a href="#about">About</a><a href="#explore">Explore</a><a href="#builder">Build</a><a href="#community">Community</a></nav>
+<a class="pill" href="https://www.instagram.com/myronix.industries/" target="_blank">Instagram ↗</a>
 </header>
+<section class="hero" id="home"><div class="gridbg"></div><div class="hero-inner"><div class="eyebrow">MYRONIX INDUSTRIES / DIGITAL PLATFORM</div><h1>EXPLORE.<br>CREATE.<br><span class="thin">BUILD.</span></h1><p class="sub">Learn how things are made—from programming and game development to design, editing, AI, robotics and digital creation. Then turn what you learn into projects.</p><div class="actions"><a class="btn" href="#explore">Explore Areas</a><a class="btn alt" href="#builder">Start Building</a></div></div><svg class="hero-mark" viewBox="0 0 100 100"><path d="M14 78V22h15l21 29 21-29h15v56H72V44L50 72 28 44v34Z" fill="none" stroke="white" stroke-width="5"/></svg><div class="scroll">Scroll / Explore ↓</div></section>
+<div class="marquee"><div class="track">PROGRAMMING • AI • ROBOTICS • GAME DEVELOPMENT • DESIGN • DIGITAL MEDIA • VIDEO EDITING • CREATING • LEARNING • COLLABORATION • BUSINESS • &nbsp; PROGRAMMING • AI • ROBOTICS • GAME DEVELOPMENT • DESIGN • DIGITAL MEDIA • VIDEO EDITING • CREATING • LEARNING • COLLABORATION • BUSINESS • &nbsp;</div></div>
+<section id="about"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">01 / The idea</div><h2>DON'T JUST<br>USE TECH.</h2></div><p class="copy">Understand it. Explore it. Build with it. MYRONIX is designed to take visitors from curiosity to creation—not just show them information.</p></div>
+<div class="explore" id="explore">
+<button class="tile reveal" data-topic="programming"><div class="visual code"></div><span class="num">01 / EXPLORE</span><h3>PROGRAMMING</h3><p>Go inside coding, Python, web development, logic and software building.</p><span class="explore-tag">CLICK TO EXPLORE ↗</span></button>
+<button class="tile reveal" data-topic="game"><div class="visual game"></div><span class="num">02 / EXPLORE</span><h3>GAME DEVELOPMENT</h3><p>Learn how games are made: programming, mechanics, design, systems and interactive experiences.</p><span class="explore-tag">CLICK TO EXPLORE ↗</span></button>
+<button class="tile reveal" data-topic="editing"><div class="visual edit"></div><span class="num">03 / EXPLORE</span><h3>EDITING</h3><p>Explore video editing, motion, storytelling and digital media workflows.</p><span class="explore-tag">CLICK TO EXPLORE ↗</span></button>
+<button class="tile reveal" data-topic="design"><div class="visual design"></div><span class="num">04 / EXPLORE</span><h3>DESIGNING</h3><p>Explore visual design, interfaces, creative thinking and digital product experiences.</p><span class="explore-tag">CLICK TO EXPLORE ↗</span></button>
+</div></div></section>
+<section class="feature"><div class="wrap reveal"><div class="eyebrow">02 / The experience</div><h2>LEARN HOW<br><span>THINGS ARE MADE.</span></h2></div></section>
+<section class="builder" id="builder"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">03 / Build mode</div><h2>FROM IDEA<br>TO PROJECT.</h2></div><p class="copy">Every learning area should lead somewhere. The platform can guide users through a simple build path instead of leaving them with random tutorials.</p></div>
+<div class="steps"><div class="step reveal"><span class="n">01</span><h3>CHOOSE</h3><p>Pick Programming, Game Development, Design, Editing, AI or another path.</p></div><div class="step reveal"><span class="n">02</span><h3>LEARN</h3><p>Understand the concepts through short explanations, examples and guided resources.</p></div><div class="step reveal"><span class="n">03</span><h3>BUILD</h3><p>Follow a step-by-step project and actually create something.</p></div><div class="step reveal"><span class="n">04</span><h3>IMPROVE</h3><p>Test it, edit it, fix mistakes and add your own ideas.</p></div><div class="step reveal"><span class="n">05</span><h3>SHARE</h3><p>Show the project, collaborate and eventually publish it inside the MYRONIX community.</p></div></div>
+<div class="demo reveal"><div class="demo-left"><div class="eyebrow">Example / Game Development</div><h3>BUILD A<br>GAME.</h3><p>Start with the idea → learn the programming logic → create mechanics → design the experience → test → improve → publish.</p></div><div class="demo-right"><div class="orb"></div></div></div></div></section>
+<section class="community" id="community"><div class="wrap reveal"><div class="eyebrow">04 / Community</div><h2>CREATE<br>TOGETHER.</h2><p>MYRONIX can let learners and creators create accounts, share projects, collaborate and chat. That part needs a real backend, authentication and database—not just a visual button.</p><div class="actions"><a class="btn" href="mailto:myronix.industries@gmail.com">Talk to MYRONIX</a></div></div></section>
+<section><div class="wrap"><div class="head reveal"><div><div class="eyebrow">05 / Connect</div><h2>FOLLOW<br>THE BUILD.</h2></div><p class="copy">Official MYRONIX INDUSTRIES contact points.</p></div><div class="social"><div class="socialbox reveal"><h3>Instagram</h3><p>@myronix.industries</p><a href="https://www.instagram.com/myronix.industries/" target="_blank">Open Instagram ↗</a></div><div class="socialbox reveal"><h3>Email</h3><p>myronix.industries@gmail.com</p><a href="mailto:myronix.industries@gmail.com">Send Email ↗</a></div></div></div></section>
+<section class="contact"><div class="wrap reveal"><div class="eyebrow">06 / MYRONIX INDUSTRIES</div><h2>WHAT WILL<br>YOU BUILD?</h2><a class="email" href="mailto:myronix.industries@gmail.com">myronix.industries@gmail.com ↗</a></div></section>
 
-<main>
-<section class="hero" id="home">
-<div class="noise"></div>
-<div class="hero-inner">
-<div class="eyebrow">MYRONIX INDUSTRIES / 2026</div>
-<h1>BUILDING<br><span class="thin">WHAT'S NEXT.</span></h1>
-<p class="hero-sub">A technology-driven platform for programming, digital media, creation, editing, learning, collaboration and future business ideas.</p>
-<div class="actions"><a class="btn" href="#platform">Explore MYRONIX</a><a class="btn dark" href="https://www.instagram.com/myronix.industries/" target="_blank" rel="noopener">Visit Instagram</a></div>
+<div class="modal" id="exploreModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-kicker" id="modalKicker"></div>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+    <ul class="modal-list" id="modalList"></ul>
+    <a class="btn" href="mailto:myronix.industries@gmail.com">CONTACT MYRONIX ↗</a>
+  </div>
 </div>
-<svg class="hero-mark" viewBox="0 0 100 100"><path d="M14 78V22h15l21 29 21-29h15v56H72V44L50 72 28 44v34Z" fill="none" stroke="white" stroke-width="5"/></svg>
-<div class="scroll">Scroll / Explore ↓</div>
-</section>
-
-<div class="marquee"><div class="track">PROGRAMMING • DIGITAL MEDIA • CREATING • EDITING • LEARNING • COLLABORATION • BUSINESS • &nbsp; PROGRAMMING • DIGITAL MEDIA • CREATING • EDITING • LEARNING • COLLABORATION • BUSINESS • &nbsp;</div></div>
-
-<section id="about">
-<div class="wrap">
-<div class="head reveal"><div><div class="eyebrow">01 / About</div><h2>MORE THAN<br>A WEBSITE.</h2></div><p class="copy">MYRONIX is being designed as a digital space where technology and creativity meet. The goal is not to fill pages with information, but to give people useful places to learn, create, connect and build.</p></div>
-<div class="cards">
-<article class="card reveal"><span class="num">01 / LEARN</span><h3>PROGRAMMING</h3><p>Learn coding, AI, robotics and digital technology through practical resources and projects.</p></article>
-<article class="card reveal"><span class="num">02 / CREATE</span><h3>DIGITAL MEDIA</h3><p>Explore video editing, content creation, creative workflows and digital production.</p></article>
-<article class="card reveal"><span class="num">03 / BUILD</span><h3>BUSINESS</h3><p>Develop ideas, projects and collaborations around technology and digital products.</p></article>
-</div>
-</div>
-</section>
-
-<section class="feature" id="systems">
-<div class="wrap reveal"><div class="eyebrow">02 / Vision</div><h2>LEARN.<br>CREATE.<br><span>BUILD.</span></h2></div>
-</section>
-
-<section class="platform" id="platform">
-<div class="wrap">
-<div class="head reveal"><div><div class="eyebrow">03 / MYRONIX Platform</div><h2>ONE PLACE.<br>MANY POSSIBILITIES.</h2></div><p class="copy">The future version of MYRONIX can grow into an interactive platform—not just a landing page.</p></div>
-<div class="modules">
-<div class="module reveal"><span class="num">01</span><h3>Learning Hub</h3><p>Programming, AI, robotics and technology learning resources organized around real projects.</p></div>
-<div class="module reveal"><span class="num">02</span><h3>Creator Space</h3><p>Editing, digital media and content creation resources for people who want to make things.</p></div>
-<div class="module reveal"><span class="num">03</span><h3>Collaboration</h3><p>Project discovery and collaboration features can connect creators, developers and builders.</p></div>
-<div class="module reveal"><span class="num">04</span><h3>Community Chat</h3><p>A real chat system can be added later with accounts, a backend, database and real-time messaging.</p></div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="head reveal"><div><div class="eyebrow">04 / Social</div><h2>FOLLOW<br>THE BUILD.</h2></div><p class="copy">Stay connected with MYRONIX through the official Instagram profile.</p></div>
-<div class="social">
-<div class="socialbox reveal"><strong>Instagram</strong><p>@myronix.industries</p><a href="https://www.instagram.com/myronix.industries/" target="_blank" rel="noopener">Open Instagram ↗</a></div>
-<div class="socialbox reveal"><strong>Direct Contact</strong><p>For questions, ideas and collaboration.</p><a href="mailto:myronix.industries@gmail.com">Email MYRONIX ↗</a></div>
-</div>
-</div>
-</section>
-
-<section class="contact" id="contact">
-<div class="wrap reveal">
-<div class="eyebrow">05 / Contact</div>
-<h2>HAVE AN IDEA?<br>LET'S BUILD.</h2>
-<a class="contact-email" href="mailto:myronix.industries@gmail.com">myronix.industries@gmail.com ↗</a>
-</div>
-</section>
-</main>
-
-<footer><span>© 2026 MYRONIX INDUSTRIES</span><span>PROGRAMMING / MEDIA / CREATION / BUSINESS</span></footer>
-
+<footer><span>© MYRONIX INDUSTRIES</span><span>EXPLORE / CREATE / BUILD</span></footer>
 <script>
-const cursor=document.getElementById('cursor');
-window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
-document.querySelectorAll('a,.card,.socialbox').forEach(el=>{
-el.addEventListener('mouseenter',()=>{cursor.style.width='30px';cursor.style.height='30px'});
-el.addEventListener('mouseleave',()=>{cursor.style.width='12px';cursor.style.height='12px'});
-});
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>o.observe(x));
+
+const data={
+ programming:{
+  kicker:'Explore / Programming',
+  title:'PROGRAMMING',
+  text:'Learn how software is built: from basic logic and Python to websites, applications and the code that makes digital products work.',
+  list:['Start with fundamentals and problem solving','Explore Python and web development','Build small projects step by step','Improve projects through testing and debugging']
+ },
+ game:{
+  kicker:'Explore / Game Development',
+  title:'GAME DEVELOPMENT',
+  text:'Game development means learning how interactive experiences are made—not simply playing games. You can explore programming, game logic, mechanics, design and testing.',
+  list:['Game logic and programming','Mechanics and interactive systems','Level and experience design','Testing, polishing and publishing']
+ },
+ editing:{
+  kicker:'Explore / Digital Media',
+  title:'EDITING',
+  text:'Explore video editing and digital media: storytelling, timing, motion, sound, effects and content workflows.',
+  list:['Editing fundamentals','Storytelling and pacing','Motion and visual effects','Content creation workflows']
+ },
+ design:{
+  kicker:'Explore / Design',
+  title:'DESIGNING',
+  text:'Explore how digital experiences are designed—from visual systems and interfaces to creative problem solving and product presentation.',
+  list:['Visual design fundamentals','UI and interface thinking','Creative problem solving','Designing digital experiences']
+ }
+};
+const modal=document.getElementById('exploreModal'), close=document.getElementById('modalClose');
+document.querySelectorAll('.tile[data-topic]').forEach(card=>card.addEventListener('click',()=>{
+ const d=data[card.dataset.topic];
+ document.getElementById('modalKicker').textContent=d.kicker;
+ document.getElementById('modalTitle').textContent=d.title;
+ document.getElementById('modalText').textContent=d.text;
+ document.getElementById('modalList').innerHTML=d.list.map(x=>'<li>'+x+'</li>').join('');
+ modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+}));
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
+close.addEventListener('click',closeModal); modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
-</body>
-</html>
+</body></html>
